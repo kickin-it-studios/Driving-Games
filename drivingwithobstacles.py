@@ -131,6 +131,13 @@ while done == False:
     #get center of surf for later
     oldCenter = blittedRect.center
 
+    #rotate surf by DEGREE amount degrees
+    rotatedSurf =  pygame.transform.rotate(surf, degree)
+
+    #get the rect of the rotated surf and set it's center to the oldCenter
+    rotRect = rotatedSurf.get_rect()
+    rotRect.center = oldCenter
+
     dt = clock.tick(60)
 
     vel_x -= .075 * vel_x
@@ -146,9 +153,11 @@ while done == False:
 
     axis = pygame.joystick.Joystick(0).get_axis(0)
 
-# Expand the center of the axis controller so it doesn't drift
+    # Expand the center of the axis controller so it doesn't drift
     if -.1 < pygame.joystick.Joystick(0).get_axis(0) < .1:
         axis = 0
+
+# Game Engine
 
     degree = degree - turningradius*dt*(math.sqrt(vel_x**2 + vel_y**2))*(axis)
 
@@ -169,13 +178,6 @@ while done == False:
     if degree < 0:
         degree = (360 + degree)
 
-    #rotate surf by DEGREE amount degrees
-    rotatedSurf =  pygame.transform.rotate(surf, degree)
-
-    #get the rect of the rotated surf and set it's center to the oldCenter
-    rotRect = rotatedSurf.get_rect()
-    rotRect.center = oldCenter
-
     xpos += vel_x*dt
     ypos += vel_y*dt
 
@@ -192,7 +194,6 @@ while done == False:
     #clear screen at the start of every frame
     # Set the screen background
     if death == 0:
-
         screen.fill(BLACK)
 
     # Draw the coins
