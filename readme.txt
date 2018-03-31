@@ -1,17 +1,7 @@
-MOST CURRENT VERSION IS IN THE FOLDER MARKED DRIVING-GAMES
-Download the entire thing and then run either drivingtrack.py or drivingwithobstacles.py
-You may need to add a blank init file in your folder structures to get python to open sub-directories. Not sure if Git Hub keeps those in the upload
+Ok, shit is getting a bit out of control organizationally on my computer, and I also don't think I ever committed yesterday's code, so if anyone is trying to follow along later, i apologize for any confusion.
 
-Other files here are older versions i'm not sure how to archive yet...
+At this point I have a very nicely working 2 person multiplayer and single player free play racing game. I have also somewhat unsuccessfully implemented a "genetic algoritm" to the game!!! I made a very stripped down version called Genetic_drivingtrack.py that opens a csv file, does a round of evolution on it (reproduction, mutation, random additions), races it again, and then sorts the list from fastest to slowest.
 
-PREVIOUS RELEASE NOTES:
-Split out a bunch of the code from drivingtrack.py in an effort to clean up the code and better understand all the individual components.
-drivingwithobstacles is pretty much the same as it was
-map.py contains the track information for drivingtrack.py
-start_state.py are the initial conditions
-base_car.py contain the attributes of the car. size, acceleration, drag, turning radius
-color_sheme.py is the base version of the color scheme with black, red, and green
-cool_color_scheme.py is a more subdued calm color scheme and shows how switching between the two is easy
+I am very excited to see the code working, though I think i need to give the AI a better brain if I want it to actually be able to complete a full lap. I am also running into an issue of "spinners" popping up, where the car just stays alive as long as possible doing donuts. Rad? Yes. Successful strategy? maybe. What I was intending? definitely not.
 
-alpha version
-updated 3/28/18
+The multiplayer can only currently run with 2 controllers plugged in. I'm working to improve that and the frame rate / other performance and organiational issues at some point...
